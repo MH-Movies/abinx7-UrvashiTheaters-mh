@@ -743,8 +743,9 @@ async def auto_filter(client, msg, spoll=False):
             await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         await message.reply_photo(photo=NORGE_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-    if spoll:
-        await msg.message.delete()
+    else:
+    await app.edit_message_media(chat_id, message_id,
+                    InputMediaPhoto("https://telegra.ph/file/4bb1968bd091453b0070c.jpg"))
 
 async def advantage_spell_chok(msg):
     query = re.sub(
